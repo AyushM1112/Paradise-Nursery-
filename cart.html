@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart – Paradise Nursery</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="./index.html"><span class="burst">PN</span><span>Paradise Nursery</span></a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="./products.html">Continue Shopping</a></li>
+        <li><a class="cart-icon" href="./cart.html" aria-label="Cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 4h-2l-1 2v2h2l1.6 8h10.8l2-9H7.4L7 4zm0 14a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z"/></svg>
+          <span class="cart-count" id="cart-count">0</span></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section">
+    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px">
+      <h1 style="margin:0">Shopping Cart</h1>
+      <div>
+        <strong>Total items:</strong> <span id="total-items">0</span> &nbsp;|&nbsp;
+        <strong>Total cost:</strong> <span id="total-cost">₹0</span>
+      </div>
+    </div>
+
+    <div style="overflow:auto; margin-top:16px">
+      <table id="cart-table" class="table" aria-label="Cart items">
+        <thead>
+          <tr><th>Image</th><th>Plant</th><th>Unit Price</th><th>Quantity</th><th>Subtotal</th><th>Action</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div style="display:flex; gap:12px; margin-top:16px">
+      <a class="btn" href="./products.html">Continue Shopping</a>
+      <a class="btn" href="#" onclick="alert('Checkout flow not implemented for this front-end demo.'); return false;">Checkout</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <small>© <span id="year"></span> Paradise Nursery</small>
+</footer>
+<script src="./app.js"></script>
+<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

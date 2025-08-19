@@ -1,0 +1,81 @@
+
+:root{
+  --bg: #0f172a;
+  --panel: #111827ee;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --brand: #34d399; /* green-400 */
+  --accent: #60a5fa; /* blue-400 */
+  --radius: 16px;
+  --shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial;
+  background: radial-gradient(1200px 600px at 80% -10%, #1f2937 0, #0b1224 40%, var(--bg) 70%);
+  color:var(--text);
+}
+a { color: inherit; }
+.container{max-width:1100px; margin:auto; padding: 0 20px}
+
+header{
+  position:sticky; top:0; z-index:10;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(17,24,39,.85), rgba(17,24,39,.45));
+  border-bottom:1px solid rgba(148,163,184,.12);
+}
+.nav{
+  display:flex; align-items:center; justify-content:space-between; padding:14px 0;
+}
+.brand{
+  display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:800;
+}
+.brand .burst{
+  width:30px; height:30px; display:inline-grid; place-items:center; border-radius:9px;
+  background: conic-gradient(from 210deg, var(--brand), #86efac, #a7f3d0, var(--brand));
+  color:#063; font-weight:900; box-shadow: 0 0 0 2px rgba(255,255,255,.06), inset 0 0 18px rgba(255,255,255,.25);
+}
+nav ul{list-style:none; display:flex; gap:14px; padding:0; margin:0}
+nav a{ text-decoration:none; padding:8px 12px; border-radius:12px; border:1px solid transparent; opacity:.95; font-weight:600}
+nav a:hover{ text-decoration:underline; text-underline-offset:6px; text-decoration-thickness:2px; background:rgba(96,165,250,.08); border-color:rgba(96,165,250,.25) }
+
+.hero{
+  min-height:70vh; display:grid; place-items:center; text-align:center; position:relative; overflow:hidden;
+}
+.hero::before{
+  content:""; position:absolute; inset:0;
+  background-image: url('./images/hero.svg');
+  background-size: cover; background-position:center; opacity:.25; filter: saturate(1.2);
+}
+.hero > .inner{ position:relative; z-index:1; padding: 60px 0; }
+h1{ font-size: clamp(32px, 6vw, 56px); margin: 10px 0 4px;}
+.tagline{ color: var(--muted); font-size: clamp(16px, 2.5vw, 19px) }
+.btn{
+  display:inline-block; padding:12px 16px; border-radius:12px; text-decoration:none; color:#04161a;
+  background: linear-gradient(180deg, #6ee7b7, #34d399); font-weight:800; border:1px solid rgba(16,185,129,.35);
+}
+.btn:hover{ filter:brightness(1.07) }
+
+.section{ margin: 34px 0; padding: 20px; background: var(--panel); border:1px solid rgba(148,163,184,.12); border-radius: var(--radius); box-shadow: var(--shadow) }
+.grid{ display:grid; gap:16px }
+.product-grid{ grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.card{ padding:16px; border-radius:16px; background:#0c1327; border:1px solid rgba(148,163,184,.15); display:flex; flex-direction:column; gap:10px }
+.card h3{ margin: 0 }
+.price{ font-weight:800 }
+.thumb{ width:100%; aspect-ratio: 4/3; border-radius:12px; background:#07131a; display:grid; place-items:center; overflow:hidden; border:1px solid rgba(148,163,184,.15) }
+
+.badge{ display:inline-flex; align-items:center; gap:8px; font-size:12px; color:#d1fae5; background: rgba(34,197,94,.12); border:1px solid rgba(34,197,94,.25); padding:6px 10px; border-radius:999px }
+
+.cart-icon{ display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; border:1px solid rgba(148,163,184,.25); background:#0b1020; color:var(--text); text-decoration:none }
+.cart-count{
+  min-width:22px; height:22px; display:inline-grid; place-items:center; border-radius:999px; font-size:12px; font-weight:800;
+  color:#052; background: linear-gradient(180deg, #a7f3d0, #6ee7b7); border:1px solid rgba(16,185,129,.35); padding: 0 6px;
+}
+
+.table{ width:100%; border-collapse: collapse; }
+.table th, .table td{ border-bottom:1px solid rgba(148,163,184,.15); padding:12px 8px; text-align:left }
+.table th{ color: var(--muted) }
+
+.footer{ color:var(--muted); text-align:center; margin: 40px 0 80px }
+.small{ color:var(--muted) }
